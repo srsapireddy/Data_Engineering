@@ -76,6 +76,15 @@ docker build -t test:pandas .
 #### Running Docker Image
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/79c200d1-a12a-4cd7-bc45-6dfe7f450526)
 
+#### Running docker image with command line arguments
+##### Docker File
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/2cd63a0a-e8e8-4a6d-935d-5890d593aa9d)
+##### pipeline.py file
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/cc322bf3-17c4-47b6-9c59-b2aeb71d553d)
+
+
+##### Output
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/c241c6a6-a9aa-4b87-833c-4bc8018e9e59)
 
 
 
