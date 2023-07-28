@@ -76,6 +76,66 @@ docker build -t test:pandas .
 #### Running Docker Image
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/79c200d1-a12a-4cd7-bc45-6dfe7f450526)
 
+
+### Creating a custom pipeline with Docker</br>
+Let's create an example pipeline. We will create a dummy `pipeline.py` Python script that receives and prints an argument.</br>
+
+```
+import sys
+import pandas # we don't need this but it's useful for the example
+
+# print arguments
+print(sys.argv)
+
+# argument 0 is the name os the file
+# argumment 1 contains the actual first argument we care about
+day = sys.argv[1]
+
+# cool pandas stuff goes here
+
+# print a sentence with the argument
+print(f'job finished successfully for day = {day}')
+```
+
+We can run this script with python pipeline.py <some_number>, and it should print 2 lines:
+```
+- ['pipeline.py', '<some_number>']
+- job finished successfully for day = <some_number>
+```
+
+Let's containerize it by creating a Docker image. Create the following Dockerfile file:
+
+```
+# base Docker image that we will build on
+FROM python:3.9.1
+
+# set up our image by installing prerequisites; pandas, in this case
+RUN pip install pandas
+
+# set up the working directory inside the container
+WORKDIR /app
+# copy the script to the container. 1st name is the source file, 2nd is a destination
+COPY pipeline.py pipeline.py
+
+# define what to do first when the container runs
+# in this example, we will just run the script
+ENTRYPOINT ["python", "pipeline.py"]
+```
+
+Let's build the image:
+```
+docker build -t test:pandas .
+```
+
+- The image name will be tested, and its tag will be pandas. If the tag isn't specified, it will default to the latest.
+We can now run the container and pass an argument to it so that our pipeline will receive it:
+
+```
+docker run -it test:pandas some_number
+```
+
+You should get the same output you did when you ran the pipeline script by itself.
+
 #### Running docker image with command line arguments
 ##### Docker File
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/2cd63a0a-e8e8-4a6d-935d-5890d593aa9d)
