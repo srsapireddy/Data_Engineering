@@ -24,7 +24,7 @@ Python 3 (e.g. via Anaconda)</br>
 Google Cloud SDK</br>
 Terraform
 
-## Week 1: Introduction
+## 1: Introduction
 
 ### Introduction to Data Engineering
 #### Data pipelines
