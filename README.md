@@ -24,6 +24,8 @@ Python 3 (e.g. via Anaconda)</br>
 Google Cloud SDK</br>
 Terraform
 
+## Week 1: Introduction
+
 ### Introduction to Data Engineering
 #### Data pipelines
 A data pipeline is a service that receives data as input and outputs more data—for example, reading a CSV file, transforming it, and storing it as a table in a PostgreSQL database.
