@@ -82,6 +82,10 @@ docker build -t test:pandas .
 ##### pipeline.py file
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/cc322bf3-17c4-47b6-9c59-b2aeb71d553d)
 
+```
+docker build -t test:pandas .
+docker run -it test:pandas 2023-01-15
+```
 
 ##### Output
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/c241c6a6-a9aa-4b87-833c-4bc8018e9e59)
