@@ -205,6 +205,13 @@ pgcli -h localhost -p 5432 -u root -d ny_taxi
 
 #### Ingesting data to Postgres with Python
 
+We will now create a Jupyter Notebook `upload-data.ipynb` file, which we will use to read a CSV file and export to Postgres.
+
+We will use data from the NYC TLC Trip Record Data website. Specifically, we will use the Yellow Taxi trip records CSV file for January 2021. A dictionary to understand each field is available here.
+
+Check the completed `upload-data.ipynb` in this link for a detailed guide. Feel free to copy the file to your work directory; in the same directory, you must have the CSV file linked above and the `ny_taxi_postgres_data` subdirectory.
+
+
 ##### Running Jupyter Notebook
 ```
 jupyter notebook
@@ -250,13 +257,7 @@ Install Dependencies for connecting to PostgreSQL: pip install psycopg2-binary
 ##### Checking output in PostgreSQL
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/4339ba1c-d697-4955-957f-1e4711560445)
 
-#### Ingesting data to Postgres with Python
 
-We will now create a Jupyter Notebook `upload-data.ipynb` file, which we will use to read a CSV file and export to Postgres.
-
-We will use data from the NYC TLC Trip Record Data website. Specifically, we will use the Yellow Taxi trip records CSV file for January 2021. A dictionary to understand each field is available here.
-
-Check the completed `upload-data.ipynb` in this link for a detailed guide. Feel free to copy the file to your work directory; in the same directory, you must have the CSV file linked above and the `ny_taxi_postgres_data` subdirectory.
 
 
 
