@@ -170,6 +170,12 @@ docker run -it \
     postgres:13
 ```
 
+##### Running Postgres
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/0d05f443-96e7-4ff7-80d9-9c61e70ba995)
+
+##### Output
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/79d48205-e722-4701-a457-991adc214a92)
+
 - The container needs 3 environmental variables:
   - POSTGRES_USER is the username for logging into the database. We chose root.
   - POSTGRES_PASSWORD is the password for the database. We chose root
@@ -179,8 +185,23 @@ docker run -it \
   - Path names must be absolute. If you're in a UNIX-like system, you can use pwd to print your local folder as a shortcut; this example should work with both bash and zsh shells, but fish will require you to remove the $.
   - This command will only work if you run it from a directory that contains the ny_taxi_postgres_data subdirectory you created above.
 - The -p is for port mapping. We map the default Postgres port to the same port in the host.
-- The last argument is the image name and tag. We run the official Postgres image on version 13.
+- The last argument is the image name and tag. We run the official Postgres image on version 13.</br>
 
+Once the container is running, we can log into our database with pgcli with the following command:
+
+```
+pip install pgcli
+pgcli -h localhost -p 5432 -u root -d ny_taxi
+```
+
+##### Testing connection to the database
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/76e0584c-1f8e-45bd-9873-ba18c2c80a27)
+
+- -h is the host. Since we're running locally, we can use localhost.
+- -p is the port.
+- -u is the username.
+- -d is the database name.
+- The password is not provided; it will be requested after running the command.
 
 
 
