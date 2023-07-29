@@ -152,7 +152,34 @@ docker run -it test:pandas 2023-01-15
 ##### Output
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/c241c6a6-a9aa-4b87-833c-4bc8018e9e59)
 
+#### Running Postgres in a container
 
+In later parts of the course, we will use Airflow, which uses PostgreSQL internally. We can use PostgreSQL (or just Postgres) for simpler tests.
+
+You can run a containerized version of Postgres that doesn't require installation steps. You only need to provide a few environment variables and a volume for storing data.
+
+Create a folder anywhere you'd like for Postgres to store data. We will use the example folder `ny_taxi_postgres_data`. Here's how to run the container:
+
+```
+docker run -it \
+    -e POSTGRES_USER="root" \
+    -e POSTGRES_PASSWORD="root" \
+    -e POSTGRES_DB="ny_taxi" \
+    -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
+    -p 5432:5432 \
+    postgres:13
+```
+
+- The container needs 3 environmental variables:
+  - POSTGRES_USER is the username for logging into the database. We chose root.
+  - POSTGRES_PASSWORD is the password for the database. We chose root
+    - IMPORTANT: These values are only meant for testing. Please change them for any serious project.
+  - POSTGRES_DB is the name that we will give the database. We chose ny_taxi.
+- -v points to the volume directory. The colon: separates the first part (path to the folder in the host computer) from the second part (path to the folder inside the container).
+  - Path names must be absolute. If you're in a UNIX-like system, you can use pwd to print your local folder as a shortcut; this example should work with both bash and zsh shells, but fish will require you to remove the $.
+  - This command will only work if you run it from a directory that contains the ny_taxi_postgres_data subdirectory you created above.
+- The -p is for port mapping. We map the default Postgres port to the same port in the host.
+- The last argument is the image name and tag. We run the official Postgres image on version 13.
 
 
 
