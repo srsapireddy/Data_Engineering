@@ -234,7 +234,7 @@ wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yell
 ##### Creating Data Definition Language (DDL) Schema
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/d22ec9b0-4b03-40e2-a936-ff84217dce8b)
 
-Python library for dealing with SQL: SQLAlchemy
+###### Installing Python library for dealing with SQL: SQLAlchemy
 ```
 pip install sqlalchemy
 ```
