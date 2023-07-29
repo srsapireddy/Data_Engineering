@@ -203,6 +203,57 @@ pgcli -h localhost -p 5432 -u root -d ny_taxi
 - -d is the database name.
 - The password is not provided; it will be requested after running the command.
 
+#### Ingesting data to Postgres with Python
+
+##### Running Jupyter Notebook
+```
+jupyter notebook
+```
+
+##### Downloading the data
+```
+wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz
+```
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/23b0eedc-70d0-4932-88fb-7e7aec686fd6)
+
+##### Dataset
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/4951c78b-6995-4b3c-a204-848ee2604f7b)
+
+##### Data Dictionary: https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
+
+##### Importing dataset into jupyter notebook
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/b052c698-7fa3-46b2-9668-88c76b9c1c23)
+
+##### Creating Data Definition Language (DDL) Schema
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/d22ec9b0-4b03-40e2-a936-ff84217dce8b)
+
+Python library for dealing with SQL: SQLAlchemy
+```
+pip install sqlalchemy
+```
+
+Install Dependencies for connecting to PostgreSQL: pip install psycopg2-binary
+
+##### Creating a jupyter notebook connection to PostgreSQL
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/26cefb8e-dc88-43af-9e36-88d98672a61d)
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/62b6827e-49b4-4b3e-916f-6c0a71cac3c8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
