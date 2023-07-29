@@ -238,6 +238,17 @@ Install Dependencies for connecting to PostgreSQL: pip install psycopg2-binary
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/26cefb8e-dc88-43af-9e36-88d98672a61d)
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/62b6827e-49b4-4b3e-916f-6c0a71cac3c8)
 
+##### Checking the table created in PostgreSQL
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/898bcdde-307e-43ee-ab85-7b4f99e51228)
+
+##### Inserting data into the table
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/2cc209fa-8073-49f3-b56a-0dd561be34c8)
+##### Checking output in PostgreSQL
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/f27a6b5c-52e9-491a-a6ee-a01a91ee11e0)
+##### Inserting the rest of the DB into the table
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/c0541acb-46a4-45c2-8f21-8db3b2f8aedd)
+##### Checking output in PostgreSQL
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/4339ba1c-d697-4955-957f-1e4711560445)
 
 
 
