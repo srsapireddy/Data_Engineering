@@ -258,7 +258,7 @@ Install Dependencies for connecting to PostgreSQL: pip install psycopg2-binary
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/4339ba1c-d697-4955-957f-1e4711560445)
 
 
-#### Connecting to PGAdmin
+#### Connecting pgAdmin and Postgres
 
 ##### Exploring the data
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/5242afc3-3612-4d3e-95b0-e4ab66799206)
