@@ -258,6 +258,75 @@ Install Dependencies for connecting to PostgreSQL: pip install psycopg2-binary
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/4339ba1c-d697-4955-957f-1e4711560445)
 
 
+#### Connecting to PGAdmin
+
+##### Exploring the data
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/5242afc3-3612-4d3e-95b0-e4ab66799206)
+
+Image to run PGAdmin: https://hub.docker.com/r/dpage/pgadmin4/
+
+Comment to run PGAdmin in Docker:
+```
+docker run -it \
+  -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+  -e PGADMIN_DEFAULT_PASSWORD="root" \
+  -p 8080:80 \
+  dpage/pgadmin4
+```
+
+#### Logging into pgAdmin
+##### Creating a server in pgAdmin
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/d3ae55a7-4d8a-4659-932b-18ed658358fc)
+
+##### Connecting pgAdmin to Postgres using Docker Network:
+Link: https://docs.docker.com/engine/reference/commandline/network_create/
+
+```
+docker network create pg-network
+```
+
+##### Docker command: Running Postgres (change the path)
+```
+docker run -it \
+  -e POSTGRES_USER="root" \
+  -e POSTGRES_PASSWORD="root" \
+  -e POSTGRES_DB="ny_taxi" \
+  -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
+  -p 5432:5432 \
+  --network=pg-network \
+  --name pg-database \
+  postgres:13
+```
+
+```
+pgcli -h localhost -p 5432 -u root -d ny_taxi
+```
+
+Checking the data again
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/ff1968f9-e935-4b73-8027-5f3442c93341)
+
+#### To run PGAdmin in the same network:
+```
+docker run -it \
+  -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+  -e PGADMIN_DEFAULT_PASSWORD="root" \
+  -p 8080:80 \
+  --network=pg-network \
+  --name pgadmin-2 \
+  dpage/pgadmin4
+```
+pgAdmin connection settings
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/f3c4cba1-639a-48f4-964c-d8966ed29931)
+
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/b2545966-7cad-4b1a-9ef6-50f8810c3e30)
+
+##### Querying first 100 rows of database using pgAdmin
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/9b62752c-429b-4b64-b8f5-64140f9ec779)
+
+##### Querying from the query tool of pgAdmin
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/752c1591-9557-4408-a15b-c47a5eedba1a)
+
+
 
 
 
