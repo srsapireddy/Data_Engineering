@@ -433,10 +433,15 @@ python ingest_data.py \
   --url=${URL}
 ```
 
+![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/c8467eb0-169d-475e-94ee-734b319998f4)
+
+
 ##### Checking if the program finished successfully
 ```
 echo $?
 ```
+
+
 
 ##### Check for the database in pgAdmin
 ![image](https://github.com/srsapireddy/Data_Engineering/assets/32967087/9cfb8b63-354d-4dc7-9719-5ead738c7e8d)
