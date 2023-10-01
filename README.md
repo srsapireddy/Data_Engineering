@@ -479,6 +479,11 @@ docker run -it \
     --url=${URL}
 ```
 
+### Stopping all the Docker Containers
+```
+docker stop $(docker ps -a -q) 
+```
+
 
 
 
