@@ -481,7 +481,9 @@ docker run -it \
 
 ### Stopping all the Docker Containers
 ```
-docker stop $(docker ps -a -q) 
+docker stop $(docker ps -a -q)
+docker container rm $(docker container ls -aq)
+docker container ls -a
 ```
 
 
