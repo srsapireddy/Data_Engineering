@@ -486,6 +486,8 @@ docker container rm $(docker container ls -aq)
 docker container ls -a
 ```
 
+## Running Postgres and pgAdmin with Docker-Compose
+
 
 
 
